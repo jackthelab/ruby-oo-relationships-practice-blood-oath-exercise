@@ -26,6 +26,6 @@ a_positive.recruit_follower(wilma, "_2020-11-01_")
 bloodoath_two = BloodOath.new(veronica, baking_cult)
 veronica.join_cult(flower_cult, "_2008_01_01")
 
-binding.pry
+#binding.pry
 
 puts "Mwahahaha!"
