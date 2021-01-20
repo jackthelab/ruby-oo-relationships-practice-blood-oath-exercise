@@ -26,8 +26,8 @@ class Cult
 
     def cult_population
         #number of member in this cult (i.e. number of BOs with this cult?)
-        initiations = BloodOath.all.select { |bo| bo.cult == self }
-        return initiations.count
+        return initiations = BloodOath.all.select { |bo| bo.cult == self }.count
+        #return initiations.count
     end
 
     def self.all
