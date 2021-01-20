@@ -17,7 +17,7 @@ class Cult
         @@all.push(self)
     end
 
-    def recruit_follower(follower, initiation_date)
+    def recruit_follower(follower, initiation_date=nil)
         #adds to the cults list of followers (go through SSOT though, likely BO instance?)
         new_b_o = BloodOath.new(follower, self, initiation_date)
     end

@@ -6,7 +6,7 @@ def BloodOath
 
     @@all = []
 
-    def initialize(follower, cult, initiation_date)
+    def initialize(follower, cult, initiation_date=nil)
         @follower = follower
         @cult = cult
         @initiation_date = initiation_date
