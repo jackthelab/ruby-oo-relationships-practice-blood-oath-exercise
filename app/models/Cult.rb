@@ -17,12 +17,15 @@ class Cult
         @@all.push(self)
     end
 
-    def recruit_follower(follower)
+    def recruit_follower(follower, initiation_date)
         #adds to the cults list of followers (go through SSOT though, likely BO instance?)
+        new_b_o = BloodOath.new(follower, self, initiation_date)
     end
 
     def cult_population
         #number of member in this cult (i.e. number of BOs with this cult?)
+        initiations = BloodOath.all.select { |bo| bo.cult == self }
+        return initiations.count
     end
 
     def self.all
@@ -31,14 +34,17 @@ class Cult
 
     def self.find_by_name(name)
         #returns a cult with name given in arg
+        return self.all.find { |cult| cult.name == name }
     end
 
     def self.find_by_location(location)
         #returns array of cults in location
+        return self.all.select { |cult| cult.location == location }
     end
 
     def self.find_by_founding_year(year)
         #returns all cults founded in that year
+        return self.all.select { |cult| cult.founding_year == year }
     end
 
 end
