@@ -29,6 +29,11 @@ class Follower
         new_bo = BloodOath.new(self, cult, initiation_date)
     end
 
+    def my_cults_slogans
+        #slogans for all cults
+        return self.cults.collect { |cult| cult.slogan }
+    end
+
     def self.all
         return @@all
     end
@@ -36,6 +41,16 @@ class Follower
     def self.of_a_certain_age(age)
         #returns array of followers who are arg age or older
         return self.all.select { |follower| follower.age >= age }
+    end
+
+    def self.most_active
+        #follower with most cults
+        self.all.max_by { |follower| follower.cults.count }
+    end
+
+    def self.top_ten
+        #10 most active followers
+        self.all.max_by(10) { |follower| follower.cults.count }
     end
 
 end
