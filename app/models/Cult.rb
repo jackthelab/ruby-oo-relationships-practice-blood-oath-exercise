@@ -2,6 +2,8 @@
 #One cult needs one bloodoath for one follower
 ###BloodOath looks like SSOT?
 
+require './BloodOath.rb'
+
 class Cult
 
     attr_reader :name, :location, :founding_year

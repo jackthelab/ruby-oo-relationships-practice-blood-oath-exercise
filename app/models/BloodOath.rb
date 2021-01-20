@@ -1,6 +1,6 @@
 #One BO has one Follower and One BO has one Cult (SSOT?)
 
-def BloodOath
+class BloodOath
 
     attr_reader :follower, :cult, :initiation_date
 
